@@ -17,7 +17,7 @@ services:
     ports:
       - '3011:3011'
     volumes:
-      - './logs:/momenton/momentonserver/logs/momentonserver'
+      - './logs:/momenton/momentonserver/logs/momenton-server'
     depends_on:
       - mongo
     entrypoint:
@@ -26,7 +26,7 @@ services:
       - >-
         set -u
         set -e
-        mkdir -p ./logs/momentonserver
+        mkdir -p ./logs/momenton-server
 
         DATE=`date '+%Y-%m-%d_%H-%M-%S'`
 

@@ -5,7 +5,7 @@ node_js:
 env:
   - SERVER_IP_ADDRESS=134.209.100.116
   - USER=golra03
-  - IMAGE_NAME=golra03/momenton-server  
+  - IMAGE_NAME=golra03/momentonserver  
 services:
 - docker
 addons:

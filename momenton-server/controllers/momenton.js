@@ -72,7 +72,7 @@ exports.getEmployees = (request, response) => {
       return successResponse(
         response,
         '<h1>Momenton Server service returns all listed employees.</h1>',
-        employees
+        rejiggedData
       );
     }
   });

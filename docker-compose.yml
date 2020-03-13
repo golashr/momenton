@@ -11,13 +11,13 @@ services:
     networks:
       momenton_net:
         ipv4_address: 172.23.240.17
-  momenton-server:
-    hostname: momenton-server
-    image: 'golra03/momenton-server:latest'
+  momentonserver:
+    hostname: momentonserver
+    image: 'golra03/momentonserver:latest'
     ports:
       - '3011:3011'
     volumes:
-      - './logs:/momenton/momenton-server/logs/momenton-server'
+      - './logs:/momenton/momentonserver/logs/momentonserver'
     depends_on:
       - mongo
     entrypoint:
@@ -26,11 +26,11 @@ services:
       - >-
         set -u
         set -e
-        mkdir -p ./logs/momenton-server
+        mkdir -p ./logs/momentonserver
 
         DATE=`date '+%Y-%m-%d_%H-%M-%S'`
 
-        cd /momenton/momenton-server
+        cd /momenton/momentonserver
 
         npm run start:production
     environment:

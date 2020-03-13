@@ -7,9 +7,9 @@ RUN apk add --no-cache --virtual .build-deps \
     ca-certificates \
     && update-ca-certificates
 
-RUN mkdir -p /momenton/momenton-server
-ADD . /momenton/momenton-server/
-WORKDIR /momenton/momenton-server/
+RUN mkdir -p /momenton/momentonserver
+ADD . /momenton/momentonserver/
+WORKDIR /momenton/momentonserver/
 
 RUN npm install
 

@@ -1,0 +1,31 @@
+sudo: required
+language: node_js
+node_js:
+- node
+env:
+  - SERVER_IP_ADDRESS=134.209.100.116
+  - USER=golra03
+  - IMAGE_NAME=golra03/momenton-server  
+services:
+- docker
+addons:
+  ssh_known_hosts: 134.209.100.116
+before_install:
+- npm install
+- echo $IMAGE_NAME
+- echo "Testing Docker Hub credentials"
+- BUILDID="latest"
+- VERSION="v1.0"
+- echo $BUILDID
+- docker login -u=$DOCUSENAME -p=$DOCPASSWRD
+- docker build . -t $IMAGE_NAME:$BUILDID
+- docker build . -t $IMAGE_NAME:$VERSION
+- echo "Docker Hub credentials are working"
+script:
+- docker ps -a
+  on:
+    branch: master
+env:
+  global:
+    - secure: NdBitwnaHiOsjFcEVVRXQfzxspBTPmp+zzaa53xfNSiJvtFoRdkcc+TGse1YTPYlYb7Jgh+zZKtuutm7y7WUpV3J68PGTegSExKQIXbkU0yDfV8jpv7HKsSKACp7iv+M5zM1G2jFTa+HqsJ+lhKdB+Gklnouo46jxLw4Gqz6A0kEX0ZpUt5nnaFWHkxuo70sLBGQUMv7uR7JmiNJWbofdcbxqziYfjIAQJCj1zGQ2vLudR2zuSWysM095z9/h0aNncsZJwX4rV982SeccLSWz0slejwEKaByMGV+WK6HOzhhex9rPRKcC5s54IDfwHyfzPn7jQQhPsjNlOXJohdsAX6KwenNL2EGxwtTPkcFbGkeHjJ56a/0MJVzsgDiRyiLIApRuuAf38gF7MKyWocT0MGXPuWTl8ey6/1AF+ZpKOY822FAQvFa8l8XAVVJUL+DZExdiHmu4zVXlBS/K+4EjXCltTAvorBS9W1fBoL4WdSoXJV/3/0JfPn+2Nh0lOFd2ClFGLAXjwr43N/2iSLpsnOB3iZxmYo6hRvGUT+lm7CW0gZ0iSy7bPWOye+4NTIZHEDgWWSS03Ca1Lb3M68Fc93ywQZFvcnoMkjiqDMq6nRupzC5H9ZISqiqwB6Fz1PyeXdIj2c7My7PlOB0UP8/zSAUgAvYJboUBI3UQmKjyXU=
+    - secure: Fvb+9XV16S/QStH8WFiMHDdY+ZqQUgOrDATNqS7GIuGr/KUHT4SZwxVDWxS9+2aY3biM6ujJqLg4YPPGojcqeA8mTqcPKUAFVGpVdt+mQhROorouuQsmuBKkNZANQJuGjcDkO0DC9elY3kWByMIAbrSnqiOC4kP/KQUjDoGtnOaK+0h2/q4n44f2AMPHEDMzJKLhWE2mcE5ksgGddRuANKEXD25HUY+oUf4wAZxrb01CbGl0zAz38/AlRfW/TXAi42uULfVSdNbnZ2b5eWxMJABjPS55Tg0CYjglXFj4sGaf/L/DSdoOGXcotBnn1Y50pl+zeeEdAVKNkBigy/fPNoEsJ1E4QdSSz3b9BYFqT5BJ0rNg/wtLHVmjFBTyIUIE1OWf+h26x6rg5YoTxNl98JN0fEmBlzOgb/DAQmxTHfgw3icS7JF63aBLs5pSbv0dkUFHagyjkCxgq4ODf9Hq6F3E0VHbVY4EDU0d/GTsRL07W2yDyZEEHKi4y12pXjA6auOZnuHSbZWwVGU5SmrTi2jPVuNSQb7I6tU/9Qy4Y0ErRNhzCvB17iGt1m9pdJmcJGBHXxmSb+85Id99cRjgfFA6s4IHxJswNAmZs7oYn3gOhbbqmmgn8tgxnV4kzwEcdZEiEqHY1sd2vcsGHjnjTihV/0H1Ap+arkNxQg8bXuI=

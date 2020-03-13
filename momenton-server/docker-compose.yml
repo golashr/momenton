@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mongo:
+    hostname: mongo
+    image: 'mvertes/alpine-mongo:latest'
+    volumes:
+      - ./mongodb:/data/db
+    ports:
+      - '27017:27017'
+    restart: always
+    networks:
+      momenton_net:
+        ipv4_address: 172.23.240.17
+networks:
+  momenton_net:
+    external: true

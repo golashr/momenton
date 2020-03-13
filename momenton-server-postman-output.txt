@@ -1,0 +1,45 @@
+{
+    "success": true,
+    "timestamp": 1584066906811,
+    "message": "<h1>Momenton Server service returns all listed employees.</h1>",
+    "data": [
+        {
+            "ID": 150,
+            "employeeName": "Jamie",
+            "reportees": [
+                {
+                    "ID": 100,
+                    "employeeName": "Alan",
+                    "managerID": 150,
+                    "reportees": [
+                        {
+                            "ID": 220,
+                            "employeeName": "Martin",
+                            "managerID": 100,
+                            "reportees": []
+                        },
+                        {
+                            "ID": 275,
+                            "employeeName": "Alex",
+                            "managerID": 100,
+                            "reportees": []
+                        }
+                    ]
+                },
+                {
+                    "ID": 400,
+                    "employeeName": "Steve",
+                    "managerID": 150,
+                    "reportees": [
+                        {
+                            "ID": 190,
+                            "employeeName": "David",
+                            "managerID": 400,
+                            "reportees": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

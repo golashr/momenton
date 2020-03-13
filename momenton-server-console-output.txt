@@ -1,0 +1,92 @@
+momenton-server git:(master) ✗ npm start
+
+> momenton-server@1.0.0 start /Users/rahulgolash/Rahul/Professional/momenton/momenton-server
+> nodemon service.js
+
+[nodemon] 2.0.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node service.js`
+[momenton-server]  <  info >  2020-03-13T02:35:02.219Z |  Environment Variables service port 3011 mongoDB://localhost:27017/momentonserver on employees collection
+[momenton-server]  <  info >  2020-03-13T02:35:02.222Z |  Loading Environment Variables from development.env
+[momenton-server]  <  info >  2020-03-13T02:35:02.910Z |  [+] Momenton-server server running on port 3011
+[momenton-server]  <  info >  2020-03-13T02:35:02.942Z |  [+] Connected to MongoD at mongodb://localhost:27017/momentonserver
+[momenton-server]  <  info >  2020-03-13T02:35:02.970Z |  [+] No of employees in record 6
+[momenton-server]  <  info >  2020-03-13T02:35:06.724Z |  [+] Employees to look from Momenton-server Service
+[momenton-server]  <  info >  2020-03-13T02:35:06.804Z |  [+] Momenton Server service returns all listed employees. { _id: 5e6aec14cadc516d445f1741,
+  ID: 100,
+  employeeName: 'Alan',
+  managerID: 150,
+  createdAt: 2020-03-13T02:12:36.794Z,
+  updatedAt: 2020-03-13T02:12:36.794Z,
+  __v: 0 },{ _id: 5e6aec14cadc516d445f1742,
+  ID: 220,
+  employeeName: 'Martin',
+  managerID: 100,
+  createdAt: 2020-03-13T02:12:36.795Z,
+  updatedAt: 2020-03-13T02:12:36.795Z,
+  __v: 0 },{ _id: 5e6aec14cadc516d445f1744,
+  ID: 275,
+  employeeName: 'Alex',
+  managerID: 100,
+  createdAt: 2020-03-13T02:12:36.795Z,
+  updatedAt: 2020-03-13T02:12:36.795Z,
+  __v: 0 },{ _id: 5e6aec14cadc516d445f1745,
+  ID: 400,
+  employeeName: 'Steve',
+  managerID: 150,
+  createdAt: 2020-03-13T02:12:36.795Z,
+  updatedAt: 2020-03-13T02:12:36.795Z,
+  __v: 0 },{ _id: 5e6aec14cadc516d445f1743,
+  ID: 150,
+  employeeName: 'Jamie',
+  createdAt: 2020-03-13T02:12:36.795Z,
+  updatedAt: 2020-03-13T02:12:36.795Z,
+  __v: 0 },{ _id: 5e6aec14cadc516d445f1746,
+  ID: 190,
+  employeeName: 'David',
+  managerID: 400,
+  createdAt: 2020-03-13T02:12:36.795Z,
+  updatedAt: 2020-03-13T02:12:36.795Z,
+  __v: 0 }
+[2020-03-13T02:35:06.810Z] [
+	{
+		"ID": 150,
+		"employeeName": "Jamie",
+		"reportees": [
+			{
+				"ID": 100,
+				"employeeName": "Alan",
+				"managerID": 150,
+				"reportees": [
+					{
+						"ID": 220,
+						"employeeName": "Martin",
+						"managerID": 100,
+						"reportees": []
+					},
+					{
+						"ID": 275,
+						"employeeName": "Alex",
+						"managerID": 100,
+						"reportees": []
+					}
+				]
+			},
+			{
+				"ID": 400,
+				"employeeName": "Steve",
+				"managerID": 150,
+				"reportees": [
+					{
+						"ID": 190,
+						"employeeName": "David",
+						"managerID": 400,
+						"reportees": []
+					}
+				]
+			}
+		]
+	}
+]
